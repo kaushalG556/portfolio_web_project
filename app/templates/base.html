@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaushal Kumar - Portfolio</title>
+    <link rel="icon" href="{% static 'images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="profile">
+                <img src="{% static 'images/my_profile.jpg' %}" alt="Kaushal Kumar" class="profile-image">
+                <div class="profile-info">
+                    <h1>Kaushal Kumar</h1>
+                    <p class="subtitle">MCA Student | Aspiring Software Developer</p>
+                </div>
+            </div>
+
+            <nav class="navigation">
+                <ol>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'resume' %}">Resume</a></li>
+                    <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ol>
+            </nav>
+
+        
+            <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer Section with Social Media Links -->
+    <footer>
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/kaushal-kumar-759561253/" target="_blank"><img src="{% static 'images/social/linkdin.png' %}" alt="LinkedIn"></a>
+            <a href="https://github.com/kaushalG556" target="_blank"><img src="{% static 'images/social/github.png' %}" alt="GitHub"></a>
+            <a href="https://www.facebook.com/kaushal56527" target="_blank"><img src="{% static 'images/social/facebook.png' %}" alt="Facebook"></a>
+            <a href="https://www.instagram.com/default_ks/" target="_blank"><img src="{% static 'images/social/insta.png' %}" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

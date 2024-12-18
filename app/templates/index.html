@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="home" class="hero-section">
+    <div class="hero-content">
+        <div class="hero-image-container">
+            <img src="{% static 'images/my_image.jpg' %}" alt="Kaushal Kumar" class="hero-image">
+        </div>
+        <div class="hero-text">
+            <h1 class="hero-title typing-effect" data-text="Welcome to My Portfolio">WELCOME TO MY PORTFOLIO</h1>
+            <p class="hero-subtitle typing-effect" data-text="Hi, I'm Kaushal Kumar, an aspiring software developer. Explore my work and journey!">
+                Hi, I'm <span class="highlight">Kaushal Kumar</span>, an aspiring software developer.<br> Explore my work and journey!
+            </p>
+        </div>
+    </div>  
+</section>
+
+<style>
+/* Default (Light) Mode Styles */
+
+/* Hero section and content styling */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #0073b1, #4caf50);
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    animation: slideUp 1.5s ease-in-out;
+}
+
+.hero-image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.1);
+}
+
+.hero-title,
+.hero-subtitle {
+    max-width: 600px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+    animation: typing 6s steps(60, end) 1, blink 0.8s step-end infinite; /* Adjust animation duration */
+}
+
+/* Typing Animation */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%; /* Complete the full width typing */
+    }
+}
+
+@keyframes blink {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2em;
+    }
+
+    .hero-subtitle {
+        font-size: 1em;
+    }
+
+    .hero-image-container {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+    /* Change background for dark mode */
+    .hero-section {
+        color: #ddd; /* Light text for better contrast */
+    }
+
+    .hero-title,
+    .hero-subtitle {
+        border-right: 2px solid #ddd; /* Light border for dark mode */
+    }
+
+    .highlight {
+        color: #ffeb3b; /* Keep highlight yellow in dark mode */
+    }
+
+    .hero-image-container {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Darker shadow for the image */
+    }
+
+    .hero-image {
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .hero-image:hover {
+        transform: scale(1.1);
+        filter: brightness(1.1); /* Make image a bit brighter on hover in dark mode */
+    }
+}
+</style>
+
+{% endblock %}

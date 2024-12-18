@@ -1,0 +1,767 @@
+/* General reset and body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333; 
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+} 
+
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;  /* More spacious padding */
+    background-color: #0073b1;  /* LinkedIn blue */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+/* Profile Section Styling */
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;  /* Ensure the content is aligned to the left */
+}
+
+.profile img {
+    width: 100px;  /* Adjusted size */
+    height: 100px;  /* Adjusted size */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;  /* Space between image and text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 5px solid #3498db;  /* Adding a border for decoration */
+}
+
+.profile img:hover {
+    transform: scale(1.1);  /* Zoom-in effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Profile Info Styling */
+.profile-info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Aligns text vertically */
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+    animation: fadeInText 2s ease-in-out;
+    color: #3498db;  /* Color for the name text */
+}
+
+/* Fade-In Animation for Text */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Subtitle Styling with Animation */
+.subtitle {
+    font-size: 1.1em;
+    font-weight: 300;
+    color: #e4e6e9;
+    animation: fadeInText 2s ease-in-out;
+}
+
+/* Hover Effect for Subtitle */
+.subtitle:hover {
+    color: #3498db; /* Change color on hover */
+    cursor: pointer;
+}
+
+
+/* Profile Name Hover Effect */
+h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+    animation: fadeInText 2s ease-in-out;
+    color: #3498db;  /* Initial color */
+    transition: color 0.3s ease;  /* Smooth transition for color change */
+}
+
+/* Hover effect on the name */
+h1:hover {
+    color: #1abc9c;  /* New color when hovered */
+}
+ /* Remove bullet points, padding, and margin for the list */
+    nav ol {
+        list-style: none; /* Ensure no bullet point here as well */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+        display: flex; /* Align items horizontally */
+        gap: 20px; /* Even spacing between menu items */
+    }
+
+    /* Ensure no bullet points for each list item */
+    nav ol li {
+        list-style: none; /* Remove bullet points */
+    }
+
+    /* Style for the navigation links */
+    nav ol li a {
+        color: #e4e6e9; /* Set the text color */
+        text-decoration: none; /* Remove underline */
+        font-size: 1.1em; /* Adjust font size */
+        transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and zoom effect */
+    }
+
+    /* Hover effects for links */
+    nav ol li a:hover {
+        color: black; /* Change color on hover */
+        text-decoration: none; /* Ensure there's no underline */
+        cursor: pointer; /* Make the cursor pointer on hover */
+        transform: scale(1.1); /* Zoom-in effect */
+    }
+/* Theme switch styles */
+.theme-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.theme-switch .slider {
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 50px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.theme-switch .slider:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 4px;
+    top: 2px;
+    transition: transform 0.3s ease;
+}
+
+.theme-switch input:checked + .slider {
+    background-color: #4caf50;
+}
+
+.theme-switch input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #2c3e50;
+    color: #ecf0f1 ;
+}
+
+header.dark-mode {
+    background-color: #34495e;
+}
+
+/* Footer Styling for Social Media Icons */
+footer {
+    background-color: #0073b1;  /* LinkedIn blue */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+footer .social-media {
+    display: flex;
+    gap: 20px;
+}
+
+footer .social-media a {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+footer .social-media a:hover {
+    transform: scale(1.1);
+}
+
+footer .social-media img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+header, .profile, .social-media, .theme-switch {
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+/* About Section Styling */
+.about-section {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Image styling with zoom effect */
+.about-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #3498db;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.about-image img:hover {
+    transform: scale(1.1); /* Zoom-in effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow during zoom */
+}
+
+/* Text styling with hover effect */
+.about-text h2 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.about-text h2:hover {
+    color: #3498db; /* Change color on hover */
+}
+
+.about-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #7a7373;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text h2 {
+        font-size: 1.8em;
+    }
+
+    .about-text p {
+        font-size: 1em;
+    }
+}
+
+
+/* Contact Section Styling */
+.contact-section {
+    background-color: #f7f7f7;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.contact-section h2 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    color: #34495e;
+}
+
+.contact-info a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #1abc9c;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1.2em;
+    color: #34495e;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 200px;
+    margin: 20px auto 0;
+}
+
+.btn-submit:hover {
+    background-color: #1abc9c;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 30px 15px;
+    }
+
+    .contact-section h2 {
+        font-size: 2em;
+    }
+
+    .contact-info p {
+        font-size: 1em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 1em;
+    }
+
+    .btn-submit {
+        width: 100%;
+    }
+}
+
+/* Styling for Resume Section */
+
+#resume {
+    padding: 40px;
+    background-color: #f4f7fc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 50px auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title and Section Headings */
+.section-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+    transition: color 0.3s ease;
+}
+.section-title,h3,h4{
+    color: #422414;
+}
+
+.section-title:hover {
+    color: #4a90e2; /* Hover effect for section title */
+}
+
+.subheading {
+    font-size: 1.8em;
+    color: #4a90e2;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.subheading:hover {
+    color: #333; /* Hover effect for subheadings */
+}
+
+/* Summary and Education Text */
+#resume p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+    transition: color 0.3s ease;
+}
+
+#resume p:hover {
+    color: #4a90e2; /* Hover effect for paragraphs */
+}
+
+/* List of Strengths and Projects */
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+ul li {
+    font-size: 1.1em;
+    color: #555;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+ul li:before {
+    content: '•';
+    font-size: 1.5em;
+    color: #4a90e2;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Hover effect on list items */
+ul li:hover {
+    color: #4a90e2;
+    transform: translateX(10px);
+}
+
+/* Hover effect for links */
+a {
+    text-decoration: none;
+    color: #4CAF50;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #45a049; /* Darker green on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Download Resume Button hover effect */
+.download-btn {
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.1); /* Slightly increase button size */
+    color: white; /* Keep text color white */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #resume {
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .subheading {
+        font-size: 1.5em;
+    }
+
+    ul li {
+        font-size: 1em;
+    }
+}
+
+
+/* Styling for Portfolio Section */
+#portfolio {
+    padding: 40px;
+    background-color: #f4f7fc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 50px auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title and Intro Text */
+.section-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.intro-text {
+    font-size: 1.2em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Project List and Cards */
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.project-item {
+    flex: 1 1 calc(25% - 20px);
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.project-card {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #portfolio {
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .intro-text {
+        font-size: 1.1em;
+    }
+
+    .project-item {
+        flex: 1 1 100%;
+    }
+}
+
+
+/* Light Mode Styles */
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #0073b1, #4caf50);
+    color: #fff;
+}
+
+.hero-title, .hero-subtitle {
+    color: #fff;
+    
+}
+.hero-subtitle{
+    font-size: large;
+    font-style: italic;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: black ;
+    color: #e0e0e0;
+}
+
+body.dark-mode .hero-section {
+    background: linear-gradient(135deg, #1f7a9e, rgb(162, 80, 80)); /* Darker background */
+}
+
+body.dark-mode .hero-title, 
+body.dark-mode .hero-subtitle {
+    color: #221b1b; /* Lighter text for dark mode */
+}
+
+body.dark-mode .highlight {
+    color: #3bff55; /* Keep yellow highlight */
+}
+
+body.dark-mode .hero-image-container {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Darker shadow for the image */
+}
+
+body.dark-mode .hero-image {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+body.dark-mode .hero-image:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1); /* Make image slightly brighter on hover */
+}
+
+/* Additional Media Query for Small Screens */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2em;
+    }
+
+    .hero-subtitle {
+        font-size: 1em;
+    }
+
+    .hero-image-container {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+/* Theme Toggle Button */
+#theme-toggle {
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 20px; /* Optional space between toggle and navigation */
+    position: relative;
+    top: -5px; /* Shift button up */
+    background: none; /* Remove background */
+    border: none; /* Remove any border */
+}
+
+
+
+
+
